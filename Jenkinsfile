@@ -16,5 +16,10 @@ pipeline {
         echo 'testing'
       }
     }
+    stage('deploy') {
+      steps {
+        sh 'mvn fabric8:deploy'
+      }
+    }
   }
 }
