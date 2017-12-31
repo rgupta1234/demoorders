@@ -21,5 +21,10 @@ pipeline {
         sh 'mvn fabric8:deploy'
       }
     }
+    stage('promote-qa') {
+      steps {
+        sh 'oc tag myproject/demo:latest myproject/demo:qa'
+      }
+    }
   }
 }
